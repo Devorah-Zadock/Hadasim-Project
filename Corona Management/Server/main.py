@@ -14,6 +14,12 @@ accessData = AccessData()
 
 @app.route('/read_members', methods=['POST'])
 def read_members():
+    """
+    Endpoint to read all members.
+
+    Returns:
+        JSON response containing the list of members if successful, otherwise an error message.
+    """
     try:
         members = accessData.read_members()
         members_list = []
@@ -41,6 +47,12 @@ def read_members():
 
 @app.route('/create_member', methods=['POST'])
 def create_member():
+    """
+    Endpoint to create a new member.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         member_id = request.form.get('memberId')
         last_name = request.form.get('lastName')
@@ -64,6 +76,7 @@ def create_member():
         # Set the member image if available
         if member_image:
             member.set_member_image(temp_file_path)
+
         coronaDetails = CoronaDetails(member_id=member_id)
 
         if accessData.create_member(member, coronaDetails):
@@ -79,6 +92,12 @@ def create_member():
 
 @app.route('/read_member', methods=['POST'])
 def read_member():
+    """
+    Endpoint to read a single member.
+
+    Returns:
+        JSON response containing the member details if successful, otherwise an error message.
+    """
     try:
         data = request.get_json()
         if data is None or 'member_id' not in data:
@@ -88,6 +107,7 @@ def read_member():
         member = accessData.read_member(member_id)
 
         member_image = member.get_member_image()
+
         member_image_base64 = None
         if member_image is not None:
             _, buffer = cv2.imencode('.jpg', member_image)
@@ -115,6 +135,12 @@ def read_member():
 
 @app.route('/update_member', methods=['POST'])
 def update_member():
+    """
+    Endpoint to update member details.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         member_id = request.form.get('memberId')
         last_name = request.form.get('lastName')
@@ -125,8 +151,19 @@ def update_member():
         birth_date = request.form.get('birthDate')
         phone = request.form.get('phone')
         mobile_phone = request.form.get('mobilePhone')
+        member_image = request.files['memberImage'] if 'memberImage' in request.files else None
 
+        if member_image:
+            with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+                member_image.save(temp_file)
+                temp_file_path = temp_file.name
+
+        # Create a Member object and set the image
         member = Member(member_id, last_name, first_name, street, house_number, city, birth_date, phone, mobile_phone)
+
+        if member_image:
+            member.set_member_image(temp_file_path)
+
         accessData.update_member(member)
 
         return jsonify({'success': 'Member updated successfully'}), 200
@@ -139,6 +176,12 @@ def update_member():
 
 @app.route('/delete_member', methods=['POST'])
 def delete_member():
+    """
+    Endpoint to delete a member.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         member_id = request.json.get('member_id')
         accessData.delete_member(member_id)
@@ -154,6 +197,12 @@ def delete_member():
 
 @app.route('/read_corona_details', methods=['POST'])
 def read_corona_details():
+    """
+   Endpoint to read corona details of a member.
+
+   Returns:
+       JSON response containing corona details if successful, otherwise an error message.
+   """
     try:
         request_data = request.get_json()
         member_id = request_data.get('member_id')
@@ -200,6 +249,12 @@ def read_corona_details():
 
 @app.route('/update_corona_details', methods=['POST'])
 def update_corona_details():
+    """
+    Endpoint to update corona details for a member.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         member_id = request.form.get('memberId')
         positive_result = request.form.get('positiveResult')
@@ -218,6 +273,12 @@ def update_corona_details():
 
 @app.route('/next_vaccination_number', methods=['POST'])
 def next_vaccination_number():
+    """
+    Endpoint to get the next vaccination number for a member.
+
+    Returns:
+        JSON response containing the next vaccination number if successful, otherwise an error message.
+    """
     try:
         data = request.get_json()
         if data is None or 'member_id' not in data:
@@ -235,6 +296,12 @@ def next_vaccination_number():
 
 @app.route('/create_vaccination', methods=['POST'])
 def create_vaccination():
+    """
+    Endpoint to create a new vaccination record for a member.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         member_id = request.form.get('memberId')
         vaccination_number = request.form.get('vaccinationNumber')
@@ -255,6 +322,12 @@ def create_vaccination():
 
 @app.route('/update_vaccination', methods=['POST'])
 def update_vaccination():
+    """
+    Endpoint to update a vaccination record.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         # vaccination_id = request.form.get('vaccinationId')
         member_id = request.form.get('memberId')
@@ -275,6 +348,12 @@ def update_vaccination():
 
 @app.route('/delete_vaccination', methods=['POST'])
 def delete_vaccination():
+    """
+    Endpoint to delete a vaccination record.
+
+    Returns:
+        JSON response indicating success or failure.
+    """
     try:
         vaccination_id = request.json.get('vaccination_id')
         accessData.delete_vaccination(vaccination_id)
@@ -290,4 +369,3 @@ def delete_vaccination():
 if __name__ == '__main__':
     # Run the application in debug mode
     app.run(debug=True)
-

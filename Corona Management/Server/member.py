@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, Date, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 import numpy as np
 import cv2
-import io
 
 Base = declarative_base()
 
@@ -19,7 +18,7 @@ class Member(Base):
     mobile_phone = Column(String(20))
     member_image = Column(LargeBinary)
 
-    def __init__(self, member_id, last_name, first_name, street, house_number, city, birth_date, phone, mobile_phone, member_image=None):
+    def __init__(self, member_id, last_name, first_name, street, house_number, city, birth_date, phone, mobile_phone):
         self.member_id = member_id
         self.last_name = last_name
         self.first_name = first_name
@@ -29,7 +28,7 @@ class Member(Base):
         self.birth_date = birth_date
         self.phone = phone
         self.mobile_phone = mobile_phone
-        self.member_image = member_image
+        # self.member_image = member_image
 
     def set_member_image(self, image_path):
         try:

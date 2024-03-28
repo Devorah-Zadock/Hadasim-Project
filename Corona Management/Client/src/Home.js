@@ -4,25 +4,30 @@ import './Home.css';
 import './Popup.css';
 import './Members'
 import MembersTable from './Members';
+import PopupMember from './MemberPopup';
 
 export default function Home() {
     const [isCreateMemberOpen, setCreateMemberOpen] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
     const [selectedMember, setSelectedMember] = useState(null);
 
+    // Function to handle row click in the MembersTable
     const handleRowClick = (index, member) => {
         setSelectedRow(index);
         setSelectedMember(member);
     };
 
+    // Function to open the create member popup
     const handleCreate = () => {
         setCreateMemberOpen(true);
     };
 
+    // Function to handle member deletion
     const handleDelete = () => {
         if (selectedMember) {
             const confirmDelete = window.confirm('האם ברצונך למחוק את החבר?');
             if (confirmDelete) {
+                // Sending a request to delete the member
                 fetch('http://127.0.0.1:5000/delete_member', {
                     method: 'POST',
                     headers: {
@@ -47,11 +52,13 @@ export default function Home() {
             alert("לא נבחר חבר");
         }
     }
-    
+
+    // Function to refresh the page
     const refreshPage = () => {
         window.location.reload();
     };
 
+    // Function to close the create member popup
     const closePopup = () => {
         setCreateMemberOpen(false);
     };
@@ -64,7 +71,7 @@ export default function Home() {
                 <button onClick={handleDelete}>הסרה ❌</button>
             </div>
             <MembersTable onRowClick={handleRowClick} />
-            <Popup isOpen={isCreateMemberOpen} onClose={closePopup} actionType="create" />
+            <PopupMember isOpen={isCreateMemberOpen} onClose={closePopup} actionType="create" />
 
         </div>
     )

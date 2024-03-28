@@ -1,6 +1,5 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey, CheckConstraint
+from sqlalchemy import Column, Integer, String, Date, CheckConstraint
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -11,8 +10,6 @@ class VaccinationDetails(Base):
     vaccination_number = Column(Integer)
     vaccination_date = Column(Date)
     manufacturer = Column(String)
-
-    # member = relationship("Member")  # Assuming you have a Member class defined for the 'members' table
 
     __table_args__ = (
         CheckConstraint('vaccination_number BETWEEN 1 AND 4', name='chk_vaccination_number'),

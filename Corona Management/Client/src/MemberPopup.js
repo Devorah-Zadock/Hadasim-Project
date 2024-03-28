@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const Popup = ({ isOpen, onClose, actionType, selectedMember }) => {
+const PopupMember = ({ isOpen, onClose, actionType, selectedMember }) => {
     const [memberId, setMemberId] = useState('');
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -133,6 +133,11 @@ const Popup = ({ isOpen, onClose, actionType, selectedMember }) => {
         }
     }
 
+    const formatDate = (dateString) => {
+        const [day, month, year] = dateString.split('-');
+        return `${year}-${month}-${day}`;
+    };
+
     const performAction = () => {
         switch (actionType) {
             case 'create':
@@ -217,7 +222,7 @@ const Popup = ({ isOpen, onClose, actionType, selectedMember }) => {
                     type="date"
                     placeholder="תאריך לידה"
                     value={birthDate}
-                    onChange={(e) => setBirthDate(e.target.value)}
+                    onChange={(e) => setBirthDate(formatDate(e.target.value))}
                     onKeyPress={handleKeyPress}
                 />
                 <input
@@ -253,4 +258,4 @@ const Popup = ({ isOpen, onClose, actionType, selectedMember }) => {
     )
 }
 
-export default Popup;
+export default PopupMember;
