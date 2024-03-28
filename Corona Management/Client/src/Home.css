@@ -1,0 +1,92 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    font-size: 15px;
+    /* -webkit-text-stroke: 1.5px black; */
+}
+
+.Home-content {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.add {
+    border-radius: 40px;
+}
+
+.add:hover {
+    border-radius: 30px;
+}
+
+.table {
+    direction: rtl;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.selected {
+    background-color: rgb(0, 204, 204);
+
+}
+
+.table tbody tr:hover {
+    background-color: rgb(128, 243, 243);
+    cursor: pointer;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px;
+    font-size: 20px;
+    direction: rtl;
+}
+
+.member-details {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 60%;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+    border-radius: 50%;
+}
+
+button,
+.linkBtn {
+    font-size: 15px;
+    background-color: rgb(0, 204, 204);
+    color: white;
+    border: 3px solid black;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.linkBtn:hover {
+    background-color: rgb(3, 144, 144)
+}
