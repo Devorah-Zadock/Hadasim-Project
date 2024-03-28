@@ -20,6 +20,7 @@ Navigate to the Server directory:
 cd Server
 
 Run the server:
+
 -If you're using PyCharm:
 1. Open PyCharm.
 2. Click on the green "Run" button or press Shift + F10.
