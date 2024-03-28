@@ -6,29 +6,29 @@ A system for saving the details of the members of the HMO, and their corona info
 **Installation**
 Clone the repository:
 
-git clone https://github.com/Devorah-Zadock/Hadasim-Project.git
+**git clone https://github.com/Devorah-Zadock/Hadasim-Project.git**
 
 
 Navigate to the project directory:
 
-cd Hadasim-Project
+**cd Hadasim-Project**
 
 
 Install dependencies for the Python server:
 
-pip install -r requirements.txt
+**pip install -r requirements.txt**
 
 
 Install dependencies for the React client:
 
-cd Client
-npm install
+**cd Client
+npm install**
 
 
 Running the Server:
 
 Navigate to the Server directory:
-cd Server
+**cd Server**
 
 
 Run the server:
@@ -40,18 +40,19 @@ Run the server:
 
 -If you're using terminal:
 
-python app.py
+**python app.py**
 
 
 Running the Client:
 
 Navigate to the Client directory:
-cd Client
+
+**cd Client**
 
 
 Start the React development server:
 
-npm start
+**npm start**
 
 
 Access the client:
