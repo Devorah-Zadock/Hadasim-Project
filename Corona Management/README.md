@@ -1,8 +1,9 @@
-HMO
+**HMO**
 
 A system for saving the details of the members of the HMO, and their corona information. You can add new members, update and delete.
 
-Installation
+
+**Installation**
 Clone the repository:
 
 git clone https://github.com/Devorah-Zadock/Hadasim-Project.git
@@ -58,7 +59,7 @@ Access the client:
 Open your web browser and go to http://localhost:3000.
 
 
-Below is an explanation of how to use the system.
+**Below is an explanation of how to use the system.**
 
 On the home page, all existing customers in the system will appear:
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/5c1cc8e7-0dc2-42f4-a740-2cca5669d3aa)
