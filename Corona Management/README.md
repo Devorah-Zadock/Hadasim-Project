@@ -28,4 +28,23 @@ For the member's corona information, click on the "תיק קורונה" button:
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/f6652b0a-ce65-485e-8572-f62dcdd70128)
 
 
+The details of the corona virus can be edited by clicking on the button "עדכון פרטי קורונה":
+![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/d5597cb6-0511-4cd6-9fcb-cd32ed743db3)
+
+
+To add a new vaccination, click on "הוספת חיסון":
+![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/802bb82b-3c86-4ec1-b425-1fa0b016e03b)
+
+
+To update a vaccination, click on "עדכון חיסון":
+![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/7137cad7-0d8c-46ab-9164-6e321291849c)
+
+
+
+You can see that the vaccine has been updated in the system:
+
+
+To delete a vaccination, click on "מחיקת חיסון":
+
+
 
