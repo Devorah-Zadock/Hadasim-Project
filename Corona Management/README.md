@@ -1,4 +1,8 @@
-Welcome to the HMO!
+HMO
+A system for saving the details of the members of the HMO, and their corona information. You can add new members, update and delete.
+
+Installation
+Clone the repository:
 
 Below is an explanation of how to use the system.
 
