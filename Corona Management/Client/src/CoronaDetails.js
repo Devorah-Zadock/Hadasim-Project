@@ -122,6 +122,7 @@ export default function CoronaDetails() {
     return (
         <div className='details'>
             <div className='member-details'>
+                <td><Link className='linkBtn' to={`/`}>חזרה לרשימת החברים</Link></td>
                 <h1>{coronaDetails.first_name} {coronaDetails.last_name}</h1>
                 <div>
                     <h2><u>נתוני קורונה</u></h2>

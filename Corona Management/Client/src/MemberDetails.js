@@ -45,6 +45,7 @@ export default function MemberDetails() {
     return (
         <div className='details'>
             <div className='member-details'>
+                <td><Link className='linkBtn' to={`/`}>חזרה לרשימת החברים</Link></td>
                 <h2>{member.first_name} {member.last_name}</h2>
                 <p><b>מספר זהות: </b>{member.member_id}<p><b>שם פרטי: </b>{member.first_name}</p>
                     <b> שם משפחה: </b>{member.last_name}</p>
