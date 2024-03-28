@@ -4,7 +4,6 @@ Welcome to the HMO!
 On the home page, all existing customers in the system will appear:
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/5c1cc8e7-0dc2-42f4-a740-2cca5669d3aa)
 
-
 You can add a member by clicking the "הוספה" button:
 
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/d4f1c7f2-72b8-44c9-ac48-6d5f2a5ffa46)
@@ -56,7 +55,6 @@ To delete a vaccination, click on "מחיקת חיסון":
 To update a vaccination, click on "עדכון חיסון":
 
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/7137cad7-0d8c-46ab-9164-6e321291849c)
-
 
 
 You can see that the vaccine has been updated in the system:
