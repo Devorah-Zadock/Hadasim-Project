@@ -24,3 +24,8 @@ You can update personal details by clicking on "עדכון פרטים אישיי
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/2980b70f-5e2b-4f21-a0d5-d69b73d93c4f)
 
 
+For the member's corona information, click on the "תיק קורונה" button:
+![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/f6652b0a-ce65-485e-8572-f62dcdd70128)
+
+
+
