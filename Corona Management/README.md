@@ -7,16 +7,20 @@ Clone the repository:
 git clone https://github.com/Devorah-Zadock/Hadasim-Project.git
 
 Navigate to the project directory:
+
 cd Hadasim-Project
 
 Install dependencies for the Python server:
+
 pip install -r requirements.txt
 
 Install dependencies for the React client:
+
 cd Client
 npm install
 
 Running the Server:
+
 Navigate to the Server directory:
 cd Server
 
@@ -27,16 +31,20 @@ Run the server:
 2. Click on the green "Run" button or press Shift + F10.
 
 -If you're using terminal:
+
 python app.py
 
 Running the Client:
+
 Navigate to the Client directory:
 cd Client
 
 Start the React development server:
+
 npm start
 
 Access the client:
+
 Open your web browser and go to http://localhost:3000.
 
 Below is an explanation of how to use the system.
