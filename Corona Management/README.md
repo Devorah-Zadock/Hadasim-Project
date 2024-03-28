@@ -1,5 +1,6 @@
 Welcome to the HMO!
 
+Below is an explanation of how to use the system.
 
 On the home page, all existing customers in the system will appear:
 ![image](https://github.com/Devorah-Zadock/Hadasim-Project/assets/116593258/5c1cc8e7-0dc2-42f4-a740-2cca5669d3aa)
