@@ -3,6 +3,16 @@ A system for saving the details of the members of the HMO, and their corona info
 
 Installation
 Clone the repository:
+git clone https://github.com/Devorah-Zadock/Hadasim-Project.git
+
+Navigate to the project directory:
+cd Hadasim-Project
+
+Install dependencies for the Python server:
+pip install -r requirements.txt
+
+cd Client
+npm install
 
 Below is an explanation of how to use the system.
 
